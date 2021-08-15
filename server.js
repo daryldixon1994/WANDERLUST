@@ -1,5 +1,6 @@
 const express = require("express");
-const connectDB = require("./config/connectDB");
+const mongoose = require("mongoose");
+// const connectDB = require("./config/connectDB");
 const app = express();
 const path = require("path");
 const upload = require("./middlewares/upload");
@@ -9,7 +10,17 @@ let port = process.env.PORT || 5000;
 app.use(express.json());
 
 // Connect to database
-connectDB;
+let url =
+    "mongodb+srv://anouar1994:ca_19206656@cluster0.sywgc.mongodb.net/projectDB?retryWrites=true&w=majority";
+const connectDB = mongoose
+    .connect(url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+    })
+    .then(() => console.log("Connected to database"))
+    .catch((err) => console.log(err));
 // Routes Middlewares
 
 // Register or Login User
