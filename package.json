@@ -3,17 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
-    "engines": {
-        "node": "16.1.0"
-    },
-    "scripts": {
-           "client-install": "npm install --prefix client",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-        "dev": "concurrently \"npm run server\" \"npm run client\" ",
-        "start": "node server.js",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-    },
     "author": "",
     "license": "ISC",
     "dependencies": {
@@ -36,5 +25,14 @@
         "react-modal": "^3.14.3",
         "react-swipeable-views": "^0.14.0",
         "sweetalert2": "^11.0.18"
-    }
+    },
+    "engines": { "node": "16.1.0"},
+     "scripts": {
+    "client-install": "npm install --prefix client",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  }
 }
