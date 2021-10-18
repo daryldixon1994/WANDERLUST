@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap");
 
 .wl-hostItem-container {
-    border: 1px red solid;
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -26,6 +25,8 @@
 .wl-hostDestinationItem-container {
     width: 50vh;
     height: 60vh;
+    border: 5px red solid;
+    
     border-radius: 10px;
     margin-bottom: 25px;
     margin-right: 15px;
